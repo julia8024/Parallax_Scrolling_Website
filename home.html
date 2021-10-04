@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="static/images/stars.png" id="stars"/>
+        <img src="static/images/moon.png" id="moon"/>
+        <img src="static/images/mountains_behind.png" id="mountains_behind"/>
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="static/images/mountains_front.png" id="mountains_front"/>
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scroll Effents</h2>
+        <p>Parallax scrolling is a web design technique in which the website background moves at a slower 
+            pace than the foreground. This results in a 3D effect as visitors scroll down the site, 
+            adding a sense of depth and creating a more immersive browsing experience. 
+            Parallax is based on optical illusion. 
+            Since the human eye perceives objects that are close to us as larger than things farther away, 
+            we perceive distant objects as if they were moving more slowly. 
+            The illusion has been long adopted into parallax across different mediums, fostering a realistic effect. 
+            Its first use was in traditional animation, dating back to as early as Disney’s Snow White and the Seven Dwarfs, 
+            and in video games such as Super Mario. 
+            With advancements in CSS and HTML, parallax effects later evolved into the world of web design as we know it today. 
+            Here are nine outstanding parallax scrolling examples built with Wix, handpicked for your web design inspiration:)<br><br></p>
+        <h4>Parallax scrolling examples</h4><br><br>
+        <h6>01. Mild Design</h6><br>
+        <p>Emilie De Grosbois, a Montreal-based visual artist and the founder of Mild Design, can show us a thing or two about how to make a portfolio. 
+            Her own portfolio website strikes visitors with an impressive welcome: a series of intricate fullscreen images displayed in a long scroll. 
+            These are some of the best website images we've seen. 
+            By use of parallax, the transition from one image to the next becomes not only smoother, but it also adds a sense of depth, 
+            as if the images gently glide on top of each other.<br><br></p>
+        <h6>02. Nolan Omura</h6><br>
+        <p>Nolan Omura is a Hawaii-based photographer and videographer specializing in underwater photography. His ingenious take on the parallax scrolling effect 
+            adds depth and motion to his already captivating homepage design. 
+            By dividing the page into full-width strips, site visitors are met with exhilarating shots of aquatic life each time they scroll down further. 
+            The strips float gently above one another, using a mix of both parallax and reveal scrolling effects.  
+            Giving the photographs even more movement are minute animations. While these are barely discernible, the website animations 
+            - combined with the use of parallax and video - make this page fully come to life.<br><br></p>
+        <h6>03. Chris Covert</h6>
+        <p>Aerospace engineer Chris Covert’s bold resume website is just as professional as it is innovative. 
+            The site’s design and interactivity manage to inject much of Chris’ personality into what could have otherwise been 
+            a dry list of skills, experience, and education history. 
+            Chris places shots of his printed CV and business card in the center of the screen. Using the reveal scroll effect, 
+            the website background images swiftly changes behind them as the visuals stay put, achieving a surprising result. 
+            Paying much attention down to the smallest of details, the website provides a remarkable answer to the question of how
+             to write a resume. It also includes a downloadable PDF document of the CV for potential employers to print out.<br><br></p>
+        <h6>04. Ivy Chen</h6>
+        <p>Designer and illustrator Ivy Chen’s use of parallax makes for a unique portfolio website, in which her works gradually reveal 
+            themselves as if by scrolling magic. Ivy’s use of the parallax scrolling effect is not only mesmerizing, but also amplifies 
+            and explains the page’s content. As a multidisciplinary designer, she operates at the intersection of illustration and graphic design. 
+            The two fields are integrated seamlessly, with her fashion illustrations slowly transforming into real life garments as we scroll.<br><br></p>
+        <h6>05. Industrial Jewellery</h6>
+        <p>Jewelry designer Hila Rawet Karni’s website employs parallax scrolling to create an interesting, multifaceted browsing experience. 
+            By layering images and text on top of one another and having them move at different speeds, the page seems to be constantly changing and 
+            forming new compositions as we scroll. The layered look also helps this small business website keep up with the latest web design trends. 
+            Notice, for example, how the middle photo of a sitting woman stays in place as other elements drift alongside it. 
+            That photo eventually rolls out of the screen too, making room for other sections of this website and achieving a dynamic feel.<br><br></p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
